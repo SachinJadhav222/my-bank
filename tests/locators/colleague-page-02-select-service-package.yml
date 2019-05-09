@@ -1,0 +1,26 @@
+# === Select Service Package Page ===
+# The yml files are actually saving page elements same as Page Object Model
+# Pass the name of element in Feature file as parameter e.g. "create_primary_administrator_label"
+# Element name should start with small case
+# Element or id  should start with small case , camel case e.g -createPrimaryAdminLabel
+# use _ to maintain readability e.g. this_field
+
+#Page Heading
+#select_service_page_heading: '//label[@id="servicePackageLabel"][contains(text(),"Select a service package")]'
+select_service_page_heading: '//li[@class="item2 active breadcrumb-item"][contains(text(),"Select service package")]'
+
+#Tool Tips
+service_package_tooltip: '#servicePackageTooltip'
+
+service_packages_page_label: '//*[@id="servicePackageHeading"]'
+service_package_name: '//select[@id="servicePackage"]'
+service_package_description1: '//*[@id="servicePackageDescription1"]'
+service_package_description2: '//*[@id="servicePackageDescription2"]'
+
+service_device_details_text_field: 'p#serviceDeviceDetails'
+
+secondary_admin_plus_icon: 'button#plusIconButton2'
+secondary_admin_plus_details: 'h2#adminDetailsHeading2'
+
+primary_admin_plus_icon: 'button#plusIconButton1'
+primary_admin_plus_details: 'h2#adminDetailsHeading1'

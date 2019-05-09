@@ -1,0 +1,12 @@
+#Customer workflow
+edit_workflow_search_page_heading: '#editUsersSearchHeading'
+
+#Workflow ID
+ucc_workflow_id: '#workflowInfoText'
+ucc_workflow_message: '#createWorkflowConfirmMessage'
+ucc_return_home_button: '#returnHome'
+ucc_create_another_user_button: '#restartWizard'
+
+ucc_back_button: '#backButton'
+ucc_cancel_workflow_button: ''
+

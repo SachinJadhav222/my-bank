@@ -1,0 +1,33 @@
+#colleague PA User Workflow Page
+
+pa_user_mock_workflow_landing_page_heading: 'h2#workflowSearchHeading'
+
+pa_user_mock_workflow_approved_button: '#ApprovedMaker'
+pa_user_mock_workflow_rejected_button: '#CancelledMaker'
+pa_user_mock_workflow_cancelled_button: '#RejectedMaker'
+
+#green status on right hand corner
+pa_user_workflow_item_id: '//*[@id="WorkflowId"]'
+pa_user_workflow_status: '#checkAndConfirmStatus'
+
+pa_user_workflow_back_to_search_button: '#backToSearchButton'
+pa_user_workflow_back_to_search_button2: '#backToSearch'
+pa_user_workflow_cancel_button: '#workflowCancelledButton'
+
+pa_user_workflow_reject_button: '#workflowRejectButton'
+pa_user_workflow_approve_button: '#workflowApprovedButton'
+
+pa_user_workflow_return_home_button: '#returnHome'
+
+pa_user_workflow_back_button: '#backButton'
+pa_user_workflow_yes_cancel_workflow_button: '#yesCancelWorkflowButton'
+pa_user_workflow_yes_reject_workflow_button: '#yesRejectWorkflowButton'
+pa_user_workflow_yes_approve_workflow_button: '#yesApproveWorkflowButton'
+pa_user_approver_confirmation_text: '#approvalConfirmationText'
+
+pa_user_workflow_popup_header: '//span[@class="h2"]'
+pa_user_workflow_popup_body: '//div[@class="modal-body"]'
+
+
+
+

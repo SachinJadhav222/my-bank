@@ -1,0 +1,34 @@
+#user Assign Role Page (uar)
+
+# Page Heading
+#uar_assign_role_page_heading: '//h1[@id="wizardHeading"][contains(text(),"Assign roles")]'
+#uar_assign_role_page_heading: '//li[@class="item2 active breadcrumb-item"]'
+uar_assign_role_page_heading: '//li[@class="item2 active breadcrumb-item"][contains(text(), "Assign user roles")]'
+
+#lablels for assign role
+uar_assign_role_label: '#assignRolesHeading'
+uar_ocb_checkbox_label: '#isOCBLabel'
+uar_select_business_partner_label: '#assignDivisionLabel'
+uar_select_role_profile_label: '#assignRolesLabel'
+uar_description_label: '#rolesDescriptionTitle'
+
+#checkbox
+uar_ocb_checkbox: '#isOCB'
+
+#select dropdown
+#uar_select_business_partner: '//select[@id="assignDivision"]'
+uar_select_business_partner: '//select[@id="assignDivision"]'
+uar_select_role_profile: '//select[@id="role"]'
+
+uar_role_description1: '#roleDescription1'
+uar_role_description2: '#roleDescription2'
+uar_role_description4: '#roleDescription4'
+uar_role_description5: '#roleDescription5'
+
+business_partner: '//select[@id="assignDivision"]'
+role_type: '//select[@id="role"]'
+role_description1: '//p[@id="roleDescription1"]'
+continue_button: '//button[@id="nextButton"]'
+ocb_checkbox: '//label[@id="isOCBLabel"]'
+
+

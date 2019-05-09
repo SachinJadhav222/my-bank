@@ -1,0 +1,102 @@
+# Create Clients Page ==
+# The yml files are actually saving page elements same as Page Object Model
+# Pass the name of element in Feature file as parameter e.g. "create_primary_administrator_label"
+# Element or id  should start with small case , camel case e.g -createPrimaryAdminLabel
+# use _ to maintain readability e.g. this_field
+#The Uniqueness of the Placeholders can be identified by running the Task: yarn gulp findDuplicates
+
+#Page Heading
+create_client_page_heading: '//h1[@id="wizardHeading"][contains(text(),"Create a new client")]'
+create_client_page_heading1: '//li[@class="item1 active breadcrumb-item"][contains(text(),"Client details")]'
+
+#Page loading spinner
+client_page_loading_spinner: '#requestStatusMessage'
+
+#Buttons
+search_icon: '//*[@id="bpIdSearchButton"]'
+#cancel_button: '//*[@id="cancelButton"]'
+confirm_button_client: '//*[@id="confirmButton"]'
+next_button: 'button#nextButton'
+previous_button: '//*[@id="previousButton"]'
+client_return_home_button: '#returnHome'
+
+#Tool Tips
+bpid_tooltip: '#bpIdTooltip'
+
+#Radio Buttons
+dual_admin_selection: '//*[@id="dualApproval"]'
+single_admin_selection: '//*[@id="singleApproval"]'
+
+client_business_partner_id_field_label: '#businessPartnerSearchHeading'
+
+client_business_partner_id_entry_field: './/input[@id="bpId"]'
+client_name_entry_field: '//*[@id="clientName"]'
+client_address_entry_field: './/*[@id="address"]'
+client_post_code_field: '//*[@id="postCode"]'
+client_country_field: '//*[@id="country"]'
+invalid_client_id_error: '#bpIdError'
+no_result_message: '//*[@id="businessPartnerSearchError"]'
+client_details_label: '//*[@id="root"]/div/div/div/div/div/div[2]/div/div/div[1]/span'
+
+
+client_address_1: '//*[@id="address1"]'
+client_address_2: '//*[@id="address2"]'
+
+
+client_settings_field: '//*[@id="clientSettingsHeading"]'
+password_expiry_field: '//*[@id="root"]/div/div/div/div[2]/div/div[3]/div/div/form/div[1]/div/div/label'
+password_expiry_entry_field: '#passwordExpiry'
+
+create_client_field: 'h1#wizardHeading'
+create_client_page_title: 'h1#wizardHeading'
+create_client: '//button[@id="createClientButton"]'
+
+client_name_field_label: '//label[@id="clientNameLabel"]'
+client_name_error_message: '//p[@id="clientNameError"]'
+
+cmd_id_field_label: '//label[@id="cmdIdLabel"]'
+cmd_id_entry_field: '//input[@id="cmdId"]'
+cmd_id_error_message: '//p[@id="cmdIdError"]'
+
+bp_id_field_label: '//label[@id="bpIdLabel"]'
+bp_id_entry_field: '//input[@id="bpId"]'
+bp_id_error_message: '//p[@id="bpIdError"]'
+
+client_address_field_label1: '//label[@id="addressLine1Label"]'
+client_address_field_label2: '//label[@id="addressLine2Label"]'
+client_address_field_label3: '//label[@id="addressLine3Label"]'
+city_field_label: '//label[@id="townLabel"]'
+country_field_label: '//label[@id="countryLabel"]'
+post_code_field_label: '//label[@id="postCodeLabel"]'
+city_entry_field: '//input[@id="town"]'
+city_error_message: '//p[@id="townError"]'
+client_address_entry_field1: '//input[@id="addressLine1"]'
+client_address_entry_field2: '//input[@id="addressLine2"]'
+client_address_entry_field3: '//input[@id="addressLine3"]'
+client_address1_error_message: '//p[@id="addressLine1Error"]'
+client_address2_error_message: '//p[@id="addressLine2Error"]'
+
+create_client_yes_cancel_button: '//*[@id="cancelCreationModalWindow"]/div/div[3]/button[2]'
+
+#Customer
+#service_device_details_text_field: '#serviceDeviceDetails'
+
+#Popup modal window
+cancel_create_client_popup_header: '//*[@id="cancelCreationModalWindow"]/div/div[1]/h5/span'
+cancel_create_client_popup_body: '//*[@id="cancelCreationModalWindow"]/div/div[2]/p'
+cancel_create_client_no_button: '//*[@id="cancelCreationModalWindow"]/div/div[3]/button[1]'
+cancel_create_client_yes_button: '//*[@id="cancelCreationModalWindow"]/div/div[3]/button[2]'
+
+
+
+
+
+
+
+
+
+
+
+
+
+

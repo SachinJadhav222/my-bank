@@ -1,0 +1,4 @@
+#usr_set_homepage_header: '#setHomepageHeading'
+user_set_homepage_heading: '//li[@class="item3 active breadcrumb-item"][contains(text(),"Set homepage")]'
+user_set_homepage_accounts_by_entity_radio_button: 'input#accountsByEntityRadio'
+user_set_homepage_description_field: '#accountsByEntityDescription'

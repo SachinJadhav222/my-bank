@@ -1,0 +1,4108 @@
+{
+	"info": {
+		"_postman_id": "ba7ee40a-549f-89d0-d8c9-a34f9e1a11e9",
+		"name": "cmp-cbo-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pa-user",
+			"item": [
+				{
+					"name": "01-pa-user-verify-email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.returnCode).to.eql(\"1\");",
+									"    pm.expect(jsonData.reasonText).to.eql(\"Email already exist in data base.\");",
+									"    pm.expect(jsonData.severityCode).to.eql(\"2\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userNameToVerify\":\"\",\"userEmailIdToVerify\":\"FAILEDRSA@FAILEDRSA.com\",\"userName\":\"\",\"clientId\":\"\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/verifyRegistrationAvailability",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"verifyRegistrationAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-pa-user-divisionAndProfile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    ",
+									"});",
+									" pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.divisionDetails.divisionId).to.eql(1);",
+									"    pm.expect(jsonData.divisionDetails.divisionName).to.eql(\"Volvo Group\");",
+									"    ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/divisionAndProfile",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"divisionAndProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03-pa-user-client-details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    ",
+									"});",
+									" pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.clientId).to.eql(3234567891);",
+									"    pm.expect(jsonData.clientName).to.eql(\"Volvo Group\");",
+									"   ",
+									"    ",
+									"    ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/clientDetails",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"clientDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04-pa-user-verifyRegistartionAailable-true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    ",
+									"});",
+									" pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.returnCode).to.eql(\"0\");",
+									"    pm.expect(jsonData.reasonText).to.eql(\"UserName and Email address are available.\");",
+									"   ",
+									"    ",
+									"    ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userNameToVerify\":\"\",\"userEmailIdToVerify\":\"tester@wipro.com\",\"userName\":\"\",\"clientId\":\"\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/verifyRegistrationAvailability",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"verifyRegistrationAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-pa-user-verifyRegistrationAvailability-false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    ",
+									"});",
+									" pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.returnCode).to.eql(\"1\");",
+									"    pm.expect(jsonData.reasonText).to.eql(\"Email already exist in data base.\");",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userNameToVerify\":\"\",\"userEmailIdToVerify\":\"FAILEDRSA@FAILEDRSA.com\",\"userName\":\"\",\"clientId\":\"\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/verifyRegistrationAvailability",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"verifyRegistrationAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-pa-user-workflow-created-false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(false);",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user\":{\"firstName\":\"Wipro\",\"username\":\"SACHINJADHAV\",\"title\":\"Mr\",\"lastName\":\"Tester\",\"jobTitle\":\"Software Developer\",\"emailAddress\":\"silaja@FAILEDRSA.com\",\"confirmEmailAddress\":\"silaja@FAILEDRSA.com\",\"phoneNumber\":\"+44987654321\",\"addressLine1\":\"2FA, Liverpool Street, Liverpool Street\",\"addressLine2\":\"Liverpool Street\",\"addressLine3\":\"\",\"town\":\"London\",\"country\":\"Afghanistan\",\"postCode\":\"\",\"urlParams\":{}},\"assignedRole\":{\"selectedRoleId\":13,\"admin\":false,\"isOCB\":true,\"businessDivision\":2700},\"selectedHomepage\":\"Accounts by entity\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/create",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-pa-suer-workflow-created-true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clientId\": \"3234567891\",\n\t\"divisionDetails\": {\n\t\t\"divisionId\": 1,\n\t\t\"divisionName\": \"Volvo Group\"\n\t},\n\t\"profileDetails\": {\n\t\t\"profileId\": 2700,\n\t\t\"profileType\": 13,\n\t\t\"profileName\": \"Volvo primary profile\",\n\t\t\"description\": \"Administration functions including create and maintain users. Reporting and statements functions.\",\n\t\t\"adminFlag\": true\n\t},\n\t\"paUserDetails\": {\n\t\t\"firstName\": \"Wipro\",\n\t\t\"title\": \"Mr\",\n\t\t\"lastName\": \"Tester\",\n\t\t\"jobTitle\": \"\",\n\t\t\"emailAddress\": \"tester@wipro.com\",\n\t\t\"phoneNumber\": \"+44987654321\",\n\t\t\"addressLine1\": \"2FA, Liverpool Street\",\n\t\t\"addressLine2\": \"Liverpool Street\",\n\t\t\"addressLine3\": \"\",\n\t\t\"town\": \"London\",\n\t\t\"country\": \"Afghanistan\",\n\t\t\"postCode\": \"\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/create",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07-wf-pa-user-maker-approved",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(2063077318);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Approved\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/2063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"2063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08-wf-pa-user-maker-cancelled",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(3063077318);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Cancelled\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/3063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"3063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09-wf-pa-user-maker-rejected",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4063077318);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Rejected\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/4063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"4063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10-wf-pa-user-approver-approved",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(6063077318);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Approved\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/6063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"6063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11-wf-pa-user-approver-cancelled",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(7063077318);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Cancelled\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/7063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"7063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12-wf-pa-user-approver-rejected",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(1106307731);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Rejected\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/1106307731",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"1106307731"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13-wf-pa-user-pending-approver-approver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(1006307731);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/1006307731",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"1006307731"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14-wf-pa-user-pending-maker-maker",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(9063077318);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/9063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"9063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14-wf-pa-user-pending-maker-approver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(8063077318);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/8063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"8063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15-wf-user-pending-approver-maker",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(5063077318);",
+									"     pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"     pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/workflow/retrieve/5063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"workflow",
+								"retrieve",
+								"5063077318"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "01.create_user_verify_user_name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.returnCode).to.eql(\"1\");",
+									"    pm.expect(jsonData.reasonText).to.eql(\"UserName not available but email is available.\");",
+									"    pm.expect(jsonData.severityCode).to.eql(\"1\");",
+									"    pm.expect(jsonData.availableNames[0]).to.eql(\"FAILEDRSA48\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userNameToVerify\":\"FAILEDRSA\",\"userEmailIdToVerify\":\"silaja@FAILEDRSA.com\",\"userName\":\"\",\"clientId\":\"\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/verifyRegistrationAvailability",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"verifyRegistrationAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-create_user-userName_available",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.returnCode).to.eql(\"0\");",
+									"    pm.expect(jsonData.reasonText).to.eql(\"UserName and Email address are available.\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userNameToVerify\":\"SACHINJADHAV\",\"userEmailIdToVerify\":\"silaja123@FAILEDRSA.com\",\"userName\":\"\",\"clientId\":\"\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/verifyRegistrationAvailability",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"verifyRegistrationAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03-create-user-userDivision",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData[0];",
+									"    pm.expect(jsonData.groupId).to.eql(2700);",
+									"    pm.expect(jsonData.divisionName).to.eql(\"Volvo Group\");",
+									"    pm.expect(jsonData.parentId).to.eql(1102);",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":\"3234567891\",\"clientDetails\":{\"clientId\":3234567891,\"clientName\":\"Volvo Group\",\"userRole\":\"SSA\"}}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/userDivision",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"userDivision"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04-create-user-userProfile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData[0];",
+									"    pm.expect(jsonData.id).to.eql(13);",
+									"    pm.expect(jsonData.groupId).to.eql(2700);",
+									"     pm.expect(jsonData.name).to.eql(\"Volvo primary profile\");",
+									"    pm.expect(jsonData.description).to.eql(\"Administration functions including create and maintain users. Reporting and statements functions.\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"divisionId\":2700,\"userName\":\"3234567891\",\"parentDivisionId\":1102}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/profiles",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-create-user-client-details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.clientId).to.eql(3234567891);",
+									"    pm.expect(jsonData.clientName).to.eql(\"Volvo Group\");",
+									"     pm.expect(jsonData.userRole).to.eql(\"SSA\");",
+									"    ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/clientDetails",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"clientDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-create_user_create_client_worflow_created",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user\":{\"firstName\":\"Wipro\",\"username\":\"SACHINJADHAV\",\"title\":\"Mr\",\"lastName\":\"Tester\",\"jobTitle\":\"Software Developer\",\"emailAddress\":\"silaja@FAILEDRSA.com\",\"confirmEmailAddress\":\"silaja@FAILEDRSA.com\",\"phoneNumber\":\"+44987654321\",\"addressLine1\":\"2FA, Liverpool Street, Liverpool Street\",\"addressLine2\":\"Liverpool Street\",\"addressLine3\":\"\",\"town\":\"London\",\"country\":\"Afghanistan\",\"postCode\":\"\",\"urlParams\":{}},\"assignedRole\":{\"selectedRoleId\":13,\"admin\":false,\"isOCB\":true,\"businessDivision\":2700},\"selectedHomepage\":\"Accounts by entity\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/create",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07-wf-create-user-maker-approved",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000001);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Approved\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"6234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000001,\"partyId\":\"6234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08-wf-create-user-maker-cancelled",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000002);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Cancelled\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"6234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000002,\"partyId\":\"6234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09-wf-create-user-maker-rejected",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000003);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Rejected\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"6234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000003,\"partyId\":\"6234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10-wf-create-user-approver-approved",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000005);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Approved\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"3234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000005,\"partyId\":\"3234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11-wf-create-user-approver-cancelled",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000006);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Cancelled\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"3234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000006,\"partyId\":\"3234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12-wf-create-user-approver-rejected",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000010);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Rejected\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"3234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000010,\"partyId\":\"3234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13-wf-create-user-pending-approver-approver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000004);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"3234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000004,\"partyId\":\"3234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14-wf-create-user-pending-maker-maker",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000007);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"6234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000007,\"partyId\":\"6234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15-wf-create-user-pending-maker-approver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.workflowId).to.eql(4000000008);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"6234567891\");",
+									"  ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":4000000008,\"partyId\":\"3234567891\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/retrieve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"retrieve"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "colleague",
+			"item": [
+				{
+					"name": "01.colleague_create_client_authentication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"loginId\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"CMP001\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"role\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"maker\");",
+									"// });",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.loginId).to.eql(\"CMP001\");",
+									"});",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.role).to.eql(\"maker\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_authentication_url}}/?loginId=CMP001",
+							"host": [
+								"{{sbx_authentication_url}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "loginId",
+									"value": "CMP001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02.Service Package",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Accounts, Balances and Reporting\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Medium companies\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Corporate Service Packag\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Small Companies\");",
+									"// });",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData[0];",
+									"    pm.expect(jsonData.id).to.eql(1);",
+									"    pm.expect(jsonData.name).to.eql(\"Accounts, Balances and Reporting\");",
+									"    pm.expect(jsonData.description).to.eql(\"Gives access to Accounts (By Entity, Currency & Group), Transaction History, Reporting (including Legal Bank Statements) and Administration\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData[1];",
+									"    pm.expect(jsonData.id).to.eql(2710);",
+									"    pm.expect(jsonData.name).to.eql(\"Medium companies\");",
+									"    pm.expect(jsonData.description).to.eql(\"Testing 2\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData[3];",
+									"    pm.expect(jsonData.id).to.eql(2709);",
+									"    pm.expect(jsonData.name).to.eql(\"Small Companies\");",
+									"    pm.expect(jsonData.description).to.eql(\"Testing\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/servicepackages",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"servicepackages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03.create_worflow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Accounts, Balances and Reportin\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Medium companies\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Corporate Service Packag\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Small Companies\");",
+									"// });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"businessPartnerClient\": {\n\t\t\"clientName\": \"{{clientName}}\",\n\t\t\"bpId\": 6508382352,\n\t\t\"cmdId\": \"123445\",\n\t\t\"addressLine1\": \"2FA, Liverpool Street\",\n\t\t\"addressLine2\": \"Liverpool Street\",\n\t\t\"addressLine3\": \"\",\n\t\t\"passwordExpiry\": 90,\n\t\t\"town\": \"London\",\n\t\t\"postCode\": \"\",\n\t\t\"country\": \"Afghanistan\"\n\t},\n\t\"servicePackage\": \"1\",\n\t\"passwordExpiry\": 90,\n\t\"adminUser\": [{\n\t\t\"isPrimaryContact\": true,\n\t\t\"firstName\": \"Wipro\",\n\t\t\"title\": \"Mr\",\n\t\t\"lastName\": \"Tester\",\n\t\t\"emailAddress\": \"tester@wipro.com\",\n\t\t\"phoneNumber\": \"987654321\",\n\t\t\"addressLine1\": \"2FA, Liverpool Street\",\n\t\t\"addressLine2\": \"Liverpool Street\",\n\t\t\"addressLine3\": \"\",\n\t\t\"town\": \"London\",\n\t\t\"country\": \"Afghanistan\",\n\t\t\"hasAuditRole\": 1\n\t}, {\n\t\t\"isPrimaryContact\": false,\n\t\t\"firstName\": \"LBG\",\n\t\t\"title\": \"Dr\",\n\t\t\"lastName\": \"Tester\",\n\t\t\"emailAddress\": \"tester@lbg.com\",\n\t\t\"phoneNumber\": \"987654321\",\n\t\t\"addressLine1\": \"2FA, Liverpool Street\",\n\t\t\"addressLine2\": \"Liverpool Street\",\n\t\t\"addressLine3\": \"\",\n\t\t\"town\": \"London\",\n\t\t\"country\": \"United Kingdom\",\n\t\t\"postCode\": \"FA2 3FA\",\n\t\t\"hasAuditRole\": 1,\n\t\t\"primaryEmailAddress\": \"tester@wipro.com\"\n\t}]\n}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/create",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04-wf-maker-approved",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"2063077318\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Approved\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(2063077318);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Approved\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP001\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/2063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"2063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-wf-maker-cancled",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"2063077318\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Approved\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(2063077318);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Approved\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP001\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/2063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"2063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-wf-maker-reject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"4063077318\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Rejected\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(4063077318);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Rejected\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP001\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/4063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"4063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07-wf-approver-approved",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"6063077318\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Approved\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(6063077318);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Approved\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP002\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/6063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"6063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08-wf-approver-cancelled",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"7063077318\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Cancelled\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(7063077318);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Cancelled\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP002\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"type": "text",
+								"value": " CMP001"
+							},
+							{
+								"key": "User-Role",
+								"type": "text",
+								"value": " maker"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/7063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"7063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09-wf-approver-rejected",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"1106307731\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Rejected\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(1106307731);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Rejected\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP002\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"type": "text",
+								"value": " CMP002"
+							},
+							{
+								"key": "User-Role",
+								"type": "text",
+								"value": "approver"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/1106307731",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"1106307731"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10-wf-pending-approver-approver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"1006307731\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Pending\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"approver\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(1006307731);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP002\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"type": "text",
+								"value": " CMP002"
+							},
+							{
+								"key": "User-Role",
+								"type": "text",
+								"value": "approver"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/1006307731",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"1006307731"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11-wf-pending-maker-maker",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"9063077318\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Pending\");",
+									"});",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(9063077318);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP001\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"type": "text",
+								"value": " CMP002"
+							},
+							{
+								"key": "User-Role",
+								"type": "text",
+								"value": "approver"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/9063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"9063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12-wf-pending-maker-approver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"9063077318\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Pending\");",
+									"// });",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(8063077318);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"maker\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP001\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"type": "text",
+								"value": " CMP002"
+							},
+							{
+								"key": "User-Role",
+								"type": "text",
+								"value": "approver"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/8063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"8063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13-wf-approver-maker",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"9063077318\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Pending\");",
+									"// });",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.workflowId).to.eql(5063077318);",
+									"    pm.expect(jsonData.workflowStatus).to.eql(\"Pending\");",
+									"    pm.expect(jsonData.colleagueType).to.eql(\"approver\");",
+									"    pm.expect(jsonData.creationId).to.eql(\"CMP002\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"type": "text",
+								"value": " CMP002"
+							},
+							{
+								"key": "User-Role",
+								"type": "text",
+								"value": "approver"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/workflow/retrieve/5063077318",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"workflow",
+								"retrieve",
+								"5063077318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14-wf-approve-workflow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"9063077318\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Pending\");",
+									"// });",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.clientId).to.eql(1234567890);",
+									"   ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"type": "text",
+								"value": " CMP002"
+							},
+							{
+								"key": "User-Role",
+								"type": "text",
+								"value": "approver"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":8063077318}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/workflow/approve",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"workflow",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15-wf-reject-workflow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d14c76f-32bd-45c9-aadc-431a6f2d49aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"9063077318\");",
+									"// });",
+									"// pm.test(\"Body matches string\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"Pending\");",
+									"// });",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"   ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Login-Id",
+								"type": "text",
+								"value": " CMP002"
+							},
+							{
+								"key": "User-Role",
+								"type": "text",
+								"value": "approver"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"workflowId\":8063077318}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/workflow/reject",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"workflow",
+								"reject"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "edit-user",
+			"item": [
+				{
+					"name": "01-edit-user-verifyRegistrationAvailability-true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    ",
+									"});",
+									" pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.returnCode).to.eql(\"0\");",
+									"    pm.expect(jsonData.reasonText).to.eql(\"UserName and Email address are available.\");",
+									"   ",
+									"    ",
+									"    ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userNameToVerify\":\"\",\"userEmailIdToVerify\":\"tester@wipro.com\",\"userName\":\"\",\"clientId\":\"\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/verifyRegistrationAvailability",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"verifyRegistrationAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-edit-user-verifyRegistrationAvailabe-false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData;",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    ",
+									"});",
+									" pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"    pm.expect(jsonData.returnCode).to.eql(\"1\");",
+									"    pm.expect(jsonData.reasonText).to.eql(\"Email already exist in data base.\");",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Client-Id",
+								"value": " 3234567891",
+								"type": "text"
+							},
+							{
+								"key": "User-Login-Id",
+								"value": " CMP001",
+								"type": "text"
+							},
+							{
+								"key": "User-Role",
+								"value": " maker",
+								"type": "text"
+							},
+							{
+								"key": "Correlation-Id",
+								"value": " 1234567mockCorrelationID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userNameToVerify\":\"\",\"userEmailIdToVerify\":\"FAILEDRSA@FAILEDRSA.com\",\"userName\":\"\",\"clientId\":\"\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/colleague/create/pa-user/verifyRegistrationAvailability",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"colleague",
+								"create",
+								"pa-user",
+								"verifyRegistrationAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03-edit-user-userDivision",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData[0];",
+									"    pm.expect(jsonData.groupId).to.eql(2400);",
+									"     pm.expect(jsonData.divisionName).to.eql(\"Volvo Cars\");",
+									"      pm.expect(jsonData.parentId).to.eql(1102);",
+									"    ",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Correlation-Id",
+								"value": " 123456mockCorrelationID1",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 6234567892",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":\"6234567891\",\"clientDetails\":{}}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/userDivision",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"userDivision"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04-edit-user-profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData[0];",
+									"    pm.expect(jsonData.groupId).to.eql(2400);",
+									"     pm.expect(jsonData.name).to.eql(\"Volvo cars administration\");",
+									"      pm.expect(jsonData.description).to.eql(\"Administration functions including create and maintain users. Reporting and statements functions.\");",
+									"    ",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Correlation-Id",
+								"value": " 123456mockCorrelationID1",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 6234567892",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"divisionId\":2400,\"userName\":\"6234567892\",\"parentDivisionId\":1102}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/profiles",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-edit-user-profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData=jsonData[0];",
+									"    pm.expect(jsonData.groupId).to.eql(2100);",
+									"     pm.expect(jsonData.name).to.eql(\"Common Services Profile\");",
+									"      ",
+									"    ",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Correlation-Id",
+								"value": " 123456mockCorrelationID1",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 6234567892",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"divisionId\":2100,\"userName\":\"6234567892\",\"parentDivisionId\":1102}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/profiles",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-edit-user-create-workflow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1ac7b08-2201-4963-8b83-261653096296",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"JSON Value check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(true);",
+									"   ",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Correlation-Id",
+								"value": " 123456mockCorrelationID1",
+								"type": "text"
+							},
+							{
+								"key": "Party-Id",
+								"value": " 6234567892",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user\":{\"firstName\":\"Wipro\",\"username\":\"\",\"title\":\"Mr\",\"lastName\":\"Tester\",\"jobTitle\":\"\",\"emailAddress\":\"\",\"newEmailAddress\":\"tester@wipro.com\",\"confirmNewEmailAddress\":\"tester@wipro.com\",\"phoneNumber\":\"987654321\",\"addressLine1\":\"2FA, Liverpool Street\",\"addressLine2\":\"Liverpool Street\",\"addressLine3\":\"\",\"town\":\"London\",\"country\":\"Afghanistan\",\"postCode\":\"\"},\"assignedRole\":{\"selectedRoleId\":7,\"admin\":false,\"isOCB\":true,\"businessDivision\":2400},\"selectedHomepage\":\"Accounts by entity\"}"
+						},
+						"url": {
+							"raw": "{{sbx_wlp_base_url}}/client/workflow/create",
+							"host": [
+								"{{sbx_wlp_base_url}}"
+							],
+							"path": [
+								"client",
+								"workflow",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,51 @@
+#Check and confirm Page (cc)
+
+#page Heading
+#check_confirm_page_heading: '//h1[@id="wizardHeading"][contains(text(),"Check and confirm")]'
+check_confirm_page_heading: '//li[@class="item4 active breadcrumb-item"]'
+
+#Edit Buttons
+cc_edit_client_details: '#editClientSettings'
+cc_edit_service_package: '#editServicePackage'
+cc_edit_first_primary_admin: '//button[@id="editPrimaryAdmin1"]'
+cc_edit_second_primary_admin: '//button[@id="editPrimaryAdmin2"]'
+
+#Client Details
+cc_bpid_label: '//p[@id="bpIDLabel"][contains(text(), "BP ID")]'
+cc_bpid_cc: '#bpID'
+cc_cmdid_label: '#cmdIDLabel'
+cc_cmdid_cc: 'p#cmdID'
+cc_client_details_label: '//h2[@id="clientDetailsHeading"][contains(text(), "Client details")]'
+cc_client_settings_label: '//h2[@id="clientSettingsHeader"][contains(text(), "Client settings")]'
+cc_client_name_label: '//p[@id="clientNameLabel"][contains(text(), "Client name")]'
+cc_client_name_cc: '#clientName'
+cc_client_address_label: '//p[@id="addressLabel"][contains(text(), "Address")]'
+cc_days_before_password_expire_label: '//p[@id="passwordExpiryLabel"]'
+cc_admin_type_label: '//p[@id="adminTypeLabel"]'
+cc_service_package_label: '//h2[@id="servicePackageHeader"]'
+
+cc_clint_postcode_cc: 'p#clientPostCode'
+cc_clint_country_cc: 'p#clientCountry'
+cc_service_package_cc: 'p#servicePackage'
+
+
+#First Admin
+cc_first_primary_admin_details_label: '//h2[@id="primaryAdminHeader1"][contains(text(), "First primary administrator details")]'
+cc_first_primary_admin_name: '#primaryAdminName1'
+cc_first_primary_admin_email: '#primaryAdminEmail1'
+cc_first_primary_admin_job_title: '#primaryAdminJobTitleLabel1'
+cc_first_primary_phone_number: '#primaryAdminPhoneNum1'
+cc_first_primary_country: 'p#primaryCountry1'
+is_cc_first_primary_contact: '#primaryAdminPrimaryContact1'
+is_cc_first_primary_audit_role: '#primaryAdminAuditRoleLabel1'
+
+#Second Admin
+cc_second_primary_admin_details_label: '//h2[@id="primaryAdminHeader2"][contains(text(), "Second primary administrator details")]'
+cc_second_primary_admin_name: '#primaryAdminName2'
+cc_second_primary_admin_email: '#primaryAdminEmail2'
+cc_second_primary_admin_job_title: '#primaryAdminJobTitleLabel2'
+cc_second_primary_phone_number: '#primaryAdminPhoneNum2'
+cc_second_primary_country: 'p#primaryCountry2'
+is_cc_second_primary_contact: '#primaryAdminPrimaryContact2'
+is_cc_second_primary_audit_role: '#primaryAdminAuditRoleLabel2'
+

@@ -1,0 +1,13 @@
+#page heading
+#colleague_portal_home_page_heading: '//h2[@id="colleagueLandingPageHeading"][contains(text(),"Mock Landing Page")]'
+mock_landing_page: '//h2[@id="mockLandingPageHeading"]'
+pa_user_mock_landing_page_heading: '#createPAUserHeading'
+
+workflow_search_page_heading: 'h2#workflowSearchHeading'
+pa_user_mock_page_volvo_prime_admin_button: '#createPAUserSSAVolvoButton'
+
+
+#buttons
+return_home_button: '//button[@id="returnHome"]'
+create_client_button: '//button[@id="createClientButton"]'
+create_user_button: '//button[@id="createUserButton"]'

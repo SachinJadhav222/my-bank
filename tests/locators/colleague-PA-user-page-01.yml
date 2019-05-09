@@ -1,0 +1,18 @@
+#colleague PA User
+
+
+# PA Assign Role
+pa_assign_role_checkbox: '#isOCB'
+pa_assign_role_checkbox_text: '#OCBMessage'
+pa_assign_role_division_label: '#entityDivisionTitle'
+pa_assign_role_division_field: '#selectedEntityDivision'
+pa_assign_role_role_profile_label: '#roleProfileTitle'
+pa_assign_role_role_profile_field: '#selectedRoleProfile'
+pa_assign_role_description_label: '#roleDescriptionTitle'
+pa_assign_role_description_field: '#roleDescription'
+
+pa_user_create_workflow_model_header: 'p#modalHeaderText'
+pa_user_create_workflow_model_body: 'p#createWorkflowConfirmMessage'
+
+pa_user_create_workflow_model_return_home_button: '#returnHome'
+pa_user_create_workflow_model_create_another_user_button: 'button#restartWizard'

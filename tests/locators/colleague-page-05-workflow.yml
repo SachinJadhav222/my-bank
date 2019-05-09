@@ -1,0 +1,82 @@
+#Colleague Workflow
+colleague_workflow_landing_page: 'h2#workflowSearchHeading'
+#Work flow
+cc_workflow_header: '#modalHeaderText'
+cc_workflow_message: '#createWorkflowConfirmMessage'
+cc_workflow_popup_heading: '//span[@class="h2"]'
+
+
+# Workflow Makers buttons
+maker_workflow_approved_status_id: '//button[@id="ApprovedMaker"]'
+#maker_workflow_pending_status_id: '//button[@id="PendingMaker"]'
+maker_workflow_pending_status_id: 'a#PendingMaker'
+maker_workflow_cancelled_status_id: '//button[@id="CancelledMaker"]'
+maker_workflow_rejected_status_id: '//button[@id="RejectedMaker"]'
+
+maker_own_workflow_pending_status_id: ''
+
+# Workflow Approver buttons
+approver_workflow_approved_status_id: '//button[@id="ApprovedApprover"]'
+approver_workflow_cancelled_status_id: '//button[@id="CancelledApprover"]'
+approver_workflow_pending_status_id: '//button[@id="PendingApprover"]'
+approver_workflow_rejected_status_id: '#RejectedApprover'
+
+# OWN workflow
+approver_own_workflow_pending_status_id: '#PendingApprover'
+
+#Workflow pop-up heading (Header)
+workflow_popup_heading: '//span[@class="h2"]'
+workflow_first_popup_header: '//span[@class="h2"]'
+
+#Wokflow pop-up message (Body)
+workflow_first_popup_message: '#confirmApprovalMessage'
+workflow_first_popup_message1: '#approvalConfirmationText'
+
+# Workflow first pop-up Buttons
+workflow_popup_back_button: '#backButton'
+workflow_popup_yes_approve_button: '#yesApproveWorkflowButton'
+workflow_popup_yes_reject_button: '#yesRejectWorkflowButton'
+workflow_popup_yes_cancel_button: '#yesCancelWorkflowButton'
+
+
+# Workflow second pop-up (final confirmation)
+workflow_second_popup_header: '//span[@class="h2"]'
+workflow_second_popup_message: '#approvalConfirmationText'
+workflow_popup_return_home_button: '#returnHome'
+workflow_popup_back_to_search_button: '#backToSearch'
+
+#Workflow ID
+workflow_id: '#workflowID'
+workflow_message: '#createWorkflowConfirmMessage'
+search_workflow_id_entry_field: ''
+
+#Floating Workflow ID and Status (Check and confirm page)
+workflow_id_floating_band: '//p[@id="WorkflowId"]'
+status_floating_band: '//p[@id="checkAndConfirmStatus"]'
+
+#workflow button components (buttons on Check and confirm page)
+back_to_search_button: '//button[@id="backToSearchButton"]'
+workflow_approved_button: '//button[@id="workflowApprovedButton"]'
+workflow_reject_button: '//button[@id="workflowRejectButton"]'
+workflow_cancel_button: '//button[@id="workflowCancelledButton"]'
+workflow_cancel_button1: '//button[@id="cancelWorkflow"]'
+workflow_amend_button: '//button[@id="workflowAmendButton"]'
+
+yes_cancel_workflow_button: '//button[@id="yesCancelWorkflowButton"]'
+cancelled_confirmation_header: '//span[@class="h2"][contains(text(),"Workflow cancelled")]'
+cancelled_confirmation_message: '//*[@id="successCancelConfirmationText"]'
+cancelled_confirmation_header1: '//span[@class="h2"][contains(text(),"Cancel user?")]'
+cancelled_confirmation_text_msg: '#cancelConfirmationtext'
+
+workflow_yes_reject_button: '//button[@id="yesRejectWorkflowButton"]'
+reject_confirmation_header: '//span[@class="h2"][contains(text(),"Reject workflow")]'
+reject_confirmation_message: '//*[@id="successRejectConfirmationText"]'
+workflow_edit_user_details: '//button[@id="editUserDetails"]'
+workflow_reject_back_to_search: '#createAnotherClient'
+cancelled_confirmation_header2: '//span[@class="h2"][contains(text(),"Cancel workflow")]'
+reject_confirmation_header2: '//span[@class="h2"]'
+
+workflow_model_header: '//span[@class="h2"]'
+workflow_model_body: '//div[@class="modal-body"]'
+
+

@@ -1,0 +1,107 @@
+#page heading
+edit_user_search_page_heading: '//h2[@id="editUsersSearchHeading"]'
+edit_user_check_confirm_page_heading: '//h2[@id="editUsersSearchHeading"]'
+
+edit_user_heading: '//h1[@id="wizardHeading"]'
+username_readonly: '//*[@id="editUserForm"]/div[1]/div/div[4]/p'
+email_readonly: '//*[@id="editUserForm"]/div[1]/div/div[5]/p'
+new_email_entry_field: '#newEmailAddress'
+new_confirm_email_entry_field: '#confirmNewEmailAddress'
+new_email_address_error: '#newEmailAddressError'
+confirm_new_email_error: '#confirmNewEmailAddressError'
+security_id_device_label: '//*[@id="editUserForm"]/div[2]/div/label'
+edit_user_details: 'button#editUserDetails'
+edit_popup_title_error_heading: '//p[@class="title-error-message"]'
+edit_popup_return_button: '//*[@id="emailUsernameApiValidationWindow"]/div/div[3]/button'
+edit_email_error_msg: '//*[@id="emailUsernameApiValidationWindow"]/div/div[2]/div/section/div[1]/span[2]'
+edit_popup_error_msg_body1: '//*[@id="emailUsernameApiValidationWindow"]/div/div[2]/div/section/div[1]/span[2]'
+edit_popup_error_msg_body2: '//*[@id="emailUsernameApiValidationWindow"]/div/div[2]/div/section/div[2]'
+
+edit_cancel_popup_header: '//span[@class="h2"]'
+edit_cancel_popup_body: '//p[@class="udf-body-copy-normal cancelCreationText"]'
+edit_user_search_page: '##editUsersSearchHeading'
+
+#*********** edit user's check and confirm page ************
+
+user_client_name_readonly: 'p#name'
+username_readonly2: 'p#userName'
+user_email_readonly: 'p#userEmail'
+user_job_title_readonly: 'p#userJobTitle'
+user_telephone_readonly: 'p#userTelNumber'
+user_address1_readonly: 'p#userAdd1'
+user_address2_readonly: 'p#userAdd2'
+user_address3_readonly: 'p#userAdd3'
+user_town_readonly: 'p#userTown'
+user_postcode_readonly: 'p#userPostCode'
+user_country_readonly: 'p#userCountry'
+
+user_security_device_readonly: '#securityDeviceId'
+
+cash_management_and_payments_role: 'p#userOCBRole'
+cash_management_and_payments_entity: 'p#userOCBBusinessPartner'
+cash_management_and_payments_role_profile: 'p#userOCBRoleProfile'
+
+assign_user_role_description_readonly: 'p#assignedUserRoleDescription'
+
+selected_home_page_readonly: 'p#userSelectedHomePage'
+
+homepage_description_readonly: '#homePageDescription'
+back_button: '#previousButton'
+cancel_button: '#cancelButton'
+confirm_button: '#nextButton'
+
+no_changes_to_confirm: ''
+
+############ Filed labels ##############
+
+user_name_label: '#nameLabel'
+username_label: '#userNameLabel'
+user_email_label: '#userEmailLabel'
+user_job_title_label: '#userJobTitleLabel'
+user_telephone_label: '#userTelNumberLabel'
+user_address_label: '#userAddressLabel'
+user_security_device_label: '#securityDeviceIdLabel'
+cash_management_and_payments_role_label: '#userOCBRoleLabel'
+cash_management_and_payments_entity_label: '#userOCBBusinessPartnerLabel'
+cash_management_and_payments_role_profile_label: '#userOCBRoleProfileLabel'
+assign_user_role_description_label: '#assignedUserRoleDescriptionLabel'
+selected_home_page_label: '#userSelectedHomePageLabel'
+homepage_description_label: '#homePageDescriptionLabel'
+
+
+
+
+#buttons
+#return_home_button: '//button[@id="returnHome"]'
+#create_client_button: '//button[@id="createClientButton"]'
+#create_user_button: '//button[@id="createUserButton"]'
+
+#NO change Message
+edit_user_no_changes_to_confirm_message: ''
+
+#confirmation pop-up
+edit_user_confirmation_model_header: '#modalHeaderText'
+edit_user_confirmation_model_info: '#workflowInfoText'
+edit_user_confirmation_model_body: '#createWorkflowConfirmMessage'
+
+edit_user_confirmation_popup_return_home_button: '#createWorkflowConfirmMessage'
+edit_user_confirmation_popup_create_another_user_button: '#createWorkflowConfirmMessage'
+
+
+#cancel pop-up
+edit_user_cancel_model_header: '//span[@class="h2"][contains(text(),"Cancel edit user?")]'
+edit_user_cancel_model_body: '//p[@class="udf-body-copy-normal cancelCreationText"]'
+
+edit_user_cancel_popup_no_button: '//button[@class="float-left marginRight20 noButton btn btn-secondary btn-lg"]'
+edit_user_cancel_popup_yes_button: '//button[@class="float-left marginRight20 yesButton btn btn-primary btn-lg"]'
+edit_ocb_checkbox: '//small[@id="OCBMessage"]'
+
+
+
+
+
+
+
+
+
+

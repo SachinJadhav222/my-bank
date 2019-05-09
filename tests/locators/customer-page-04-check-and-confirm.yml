@@ -1,0 +1,72 @@
+#User Check and Confirm Page (ucc)
+
+# Page Heading
+#ucc_check_and_confirm_page_heading: '//h1[@id="wizardHeading"][contains(text(),"Check and confirm")]'
+ucc_check_and_confirm_page_heading: '//li[@class="item4 active breadcrumb-item"]'
+
+#edit buttons
+ucc_edit_user_details_button: '#editUserDetails'
+ucc_edit_assign_role_button: '#editAssignedUserRoles'
+ucc_edit_homepage_button: '#editUserHomePage'
+
+#lablels & fields for client
+ucc_client_details_label: '#clientDetailsHeading'
+ucc_client_id_label: '#clientIdLabel'
+ucc_client_id_field: '#clientDetailsPanelClientID'
+  #'//td[@id="clientId"]'
+ucc_client_name_label: '#clientNameLabel'
+ucc_client_name_field: '#clientDetailsPanelClientName'
+  #'#clientName'
+
+#lablels & fields for user details
+ucc_user_details_label: '#userDetailsHeading'
+ucc_name_label: '#nameLabel'
+ucc_name_field: '#clientName'
+ucc_username_label: '#userNameLabel'
+ucc_username_field: '#userName'
+ucc_email_label: '#userEmailLabel'
+ucc_email_field: '#userEmail'
+ucc_job_title_label: '#userJobTitleLabel'
+ucc_job_title_field: '#userJobTitle'
+ucc_phone_label: '#userTelNumberLabel'
+ucc_phone_field: '#userTelNumber'
+ucc_address_label: '#userAddressLabel'
+ucc_address_field: '#userAdd1'
+ucc_address_country_field: '#userCountry'
+ucc_address_postcode_field: '#userPostCode'
+ucc_start_date_label: '#userStartDateLabel'
+ucc_startdate_field: '#userStartDate'
+
+#labels & fields  for assign role
+ucc_assign_role_label: '#assignedUserRolesHeading'
+ucc_ocb_role_label: '#userOCBRoleLabel'
+ucc_ocb_role_field: '#userOCBRole'
+ucc_ocb_business_partner_role_label: '#userOCBBusinessPartnerLabel'
+ucc_ocb_business_partner_role_field: '#userOCBBusinessPartner'
+ucc_ocb_role_profile_label: '#userOCBRoleProfileLabel'
+ucc_ocb_role_profile_field: '#userOCBRoleProfile'
+ucc_ocb_description_label: '#assignedUserRoleDescriptionLabel'
+ucc_ocb_description_field: '#assignedUserRoleDescription'
+
+#labels for home page
+ucc_selected_homepage_label: '#userSelectedHomePageLabel'
+ucc_selected_homepage_field: '#userSelectedHomePage'
+ucc_homepage_description_label: '#assignedUserRoleDescriptionLabel'
+ucc_homepage_description_field: '#assignedUserRoleDescription'
+
+
+
+#Cancelling own workflow popups
+cancel_confirmation_popup: '//p[@id="cancelConfirmationtext"][contains(text(), "Are you sure you want to cancel workflow")]'
+approver_reject_confirmation_popup: '//p[@id="rejectConfirmationText"][contains(text(), "Are you sure you want to reject workflow")]'
+popup_back_button: '//button[@id="backButton"]'
+
+#Confirmation popup window
+user_confirmation_popup_header: '#modalHeaderText'
+user_confirmation_popup_workflow_id: '#workflowInfoText'
+user_confirmation_popup_message: '#createWorkflowConfirmMessage'
+user_confirmation_popup_return_home_button: '#createWorkflowConfirmMessage'
+user_confirmation_popup_create_another_user_button: '#createWorkflowConfirmMessage'
+
+
+

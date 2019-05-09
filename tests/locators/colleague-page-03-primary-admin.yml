@@ -1,0 +1,108 @@
+# === Primary admin Page ===
+
+#Page Heading
+#primary_admin_page_heading: '//h1[@id="wizardHeading"][contains(text(),"Create primary administrator")]'
+primary_admin_page_heading: '//li[@class="item3 active breadcrumb-item"][contains(text(),"Primary admin")]'
+
+
+#Buttons & Icon
+primary_admin_checkbox: '//input[@id="isPrimaryContact"]'
+primary_admin_checkbox_label: 'label#isPrimaryContactLabel'
+check_box_primary_admin: '//input[@id="isPrimaryContact"]'
+
+
+prev_button: '#previousButton'
+#continue_button: '//*[@id="nextButton"]'
+audit_no_radio_button: '#assignAuditRoleNo'
+audit_yes_radio_button: '#assignAuditRoleYes'
+
+first_edit_button: '#editAdminUser1'
+second_edit_button: '#editAdminUser2'
+first_delete_button: '#deleteAdminUser1'
+second_delete_button: '#deleteAdminUser2'
+save_button: '#nextButton'
+
+#delete pop up confirmation
+popup_delete_message: '//span[@class="h2"][contains(text(),"Delete primary administrator")]'
+popup_confirm_delete_button: 'button#confirmDelete'
+popup_cancel_delete_button: 'button#cancelDelete'
+
+first_plus_button: 'button#plusIconButton1'
+second_plus_button: 'button#plusIconButton2'
+first_minus_button: '//button[@id="minusIconButton1"]'
+second_minus_button: '//button[@id="minusIconButton2"]'
+continue_btn: '#confirmButton'
+
+
+# Headings & Admin Details
+primary_admin_details_heading: '#primaryAdminTypeHeading'
+second_primary_admin_details_heading: '#primaryAdminTypeHeading'
+existing_primary_admin_heading: '#adminTypeHeading'
+primary_contact_message: '#primaryContactMessage'
+
+#First Admin
+first_existing_primary_admin_name: 'p#adminName1'
+first_primary_admin_details_label: '#adminDetailsHeading1'
+first_primary_admin_email: '#adminEmailAddress1'
+is_first_primary_contact: '#adminIsPrimaryContact1'
+is_first_audit_role: '#adminHasAuditRole1'
+
+#Second Admin
+second_existing_primary_admin_name: 'p#adminName2'
+second_primary_admin_details_label: '#adminDetailsHeading2'
+second_primary_admin_email: '#adminEmailAddress2'
+is_second_primary_contact: '#adminIsPrimaryContact2'
+is_second_audit_role: '#adminHasAuditRole2'
+
+#Error Messages
+mandatory_field_error: '//*[@id="mandatoryFieldError"]'
+mandatory_info_required_message: '#mandatoryInfoRequiredMessage'
+title_error_message: '#titleError'
+firstName_error_message: '#firstNameError'
+lastName_error_message: '#lastNameError'
+jobTitle_error_message: '#jobTitleError'
+email_error_message: '#emailAddressError'
+confirm_email_error_message: '#confirmEmailAddressError'
+duplicate_email_error_message: '#duplicatedEmailAddressError'
+phone_error_message: '#phoneNumberError'
+address_line1_error_message: '#addressLine1Error'
+address_line2_error_message: '#addressLine2Error'
+address_line3_error_message: '#addressLine3Error'
+town_error_message: '#townError'
+country_error_message: '#countryError'
+postcode_error_message: '#postCodeError'
+
+#form fields
+title_entry_field: '//*[@id="title"]'
+firstName_entry_field: '//*[@id="firstName"]'
+lastName_entry_field: '//*[@id="lastName"]'
+jobTitle_entry_field: '//*[@id="jobTitle"]'
+email_entry_field: '//*[@id="emailAddress"]'
+confirm_email_entry_field: '//*[@id="confirmEmailAddress"]'
+phone_entry_field: '//*[@id="phoneNumber"]'
+phone_entry_error_message: '//*[@id="phoneErrorMessage"]'
+address_line1_entry_field: '//*[@id="addressLine1"]'
+address_line2_entry_field: '//*[@id="addressLine2"]'
+address_line3_entry_field: '//*[@id="addressLine3"]'
+town_entry_field: '//*[@id="town"]'
+country_entry_field: '//*[@id="country"]'
+postcode_entry_field: '//input[@id="postCode"]'
+
+# Service Package
+service_package_heading: '#servicePackageHeading'
+select_service_entry_field: '//*[@id="servicePackage"]'
+
+#Assign Audit Role
+assign_audit_role_label: '//*[@id="auditRoleLabel"]'
+
+#Dual Admin Navigation
+popup_second_admin_confirmation: 'button#confirmButton'
+admin_popup_message: '#secondPrimaryAdminConfirmMessage'
+check_and_confirm_label: '//h1[@id="wizardHeading" and text()="Check and confirm"]'
+second_primary_administrator_label: '//span[@class="h2" and text()="Second Primary Administrator"]'
+existing_primary_admin_details: 'h2#adminTypeHeading'
+
+
+
+
+

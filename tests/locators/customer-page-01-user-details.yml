@@ -1,0 +1,83 @@
+# Create User Page
+
+#Page Heading
+create_user_page_heading: '//h1[@id="wizardHeading"][contains(text(),"Create a new user")]'
+user_details_page_heading: '//li[@class="item1 active breadcrumb-item"][contains(text(),"User details")]'
+
+#Page loading spinner
+user_page_loading_spinner: '#requestStatusMessage'
+
+#form filed
+username_entry_field: 'input#username'
+user_details_id: '#clientDetailsPanelClientID'
+  #'//td[@class="udf-form-field-copy" and @data-test="client-details-panel-clientID"]'
+user_details_name: '#clientDetailsPanelClientName'
+  #'//td[@class="udf-form-field-copy" and @data-test="client-details-panel-clientName"]'
+title_label: '//label[@id="titleLabel"]'
+
+#error
+username_error_message: '//p[@id="usernameError"]'
+username_alreadyexist_msg1: '//*[@id="createUserForm"]/div[1]/div/div[4]/p[2]'
+username_already_exist_message: '//*[@id="emailUsernameApiValidationWindow"]/div/div[2]/div/section[2]/div[1]/span[2]'
+email_already_in_use_message: '//*[@id="emailUsernameApiValidationWindow"]/div/div[2]/div/section/div[1]/span[2]'
+email_already_in_use_message1: '//p[@class="errorMessage"][contains(text(),"Email is already in use.")]'
+
+
+create_user: '//button[@id="createUserButton"]'
+
+
+assign_roles_heading: '//h2[@id="assignRolesHeading"] [contains(text(),"Assign roles")]'
+
+cancel_create_user_button: '//button[@id="cancelButton"]'
+continue_create_user_button: 'button#nextButton'
+
+usr_cancel_confirmation_message_header: '//span[@class="h2"][contains(text(),"Cancel create a new user?")]'
+#usr_cancel_confirmation_message_header: '//div[@id="cancelUserCreationModalWindow"]//span[@class="h2"][contains(text(),"Cancel create a new user?")]'
+usr_cancel_confirmation_message_body: '//*[@id="cancelCreationModalWindow"]/div/div[2]/p'
+#usr_cancel_confirmation_message_body: '//div[@id="cancelUserCreationModalWindow"]//p[@class="udf-body-copy-normal canelUserCreationText"][contains(text(),"Are you sure you want to cancel? Any unsaved data will be lost.")]'
+usr_cancel_confirmation_message_no_button: '//button[@class="float-left marginRight20 noButton btn btn-secondary btn-lg"]'
+#usr_cancel_confirmation_message_no_button: '//button[@type="button"][contains(text(),"No, I don't want to cancel.")]'
+usr_cancel_confirmation_message_yes_button: '//button[@class="float-left marginRight20 yesButton btn btn-primary btn-lg"]'
+#usr_cancel_confirmation_message_yes_button: '//button[@type="button"][contains(text(),"Yes, I want to cancel")]'
+usr_cancel_confirmation_message_action1: '//button[@class="float-left marginRight20 noButton btn btn-secondary btn-lg"]'
+usr_cancel_confirmation_message_action2: '//button[@class="float-left marginRight20 yesButton btn btn-primary btn-lg"]'
+usr_assign_role_headings: '//h2[@id="assignRolesHeading"]'
+
+customer_mock_login: '//a[@id="createUserButton"][contains(text(),"Customer")]'
+customer_mock_create_user: '//a[@id="createUserButton"][contains(text(),"Create User")]'
+
+colleague_mock_login: '//a[@id="createUserButton"][contains(text(),"Colleague")]'
+colleague_mock_create_user: '//a[@id="createClientButton"][contains(text(),"Create Client")]'
+
+create_user_workflow_header: 'p#modalHeaderText'
+create_user_workflow_return_home_bt: 'button#returnHome'
+usr_client_id: '#clientId'
+usr_client_name: '#clientName'
+usr_user_details_heading: '//li[@class="item1 active breadcrumb-item"]'
+
+modal_window_error_header: '//p[@class="title-error-message"]'
+username_modal_window_error_text_message: '//*[@id="emailUsernameApiValidationWindow"]/div/div[2]/div/section/div[1]/span[2]'
+email_modal_window_error_text_message: '//*[@id="emailUsernameApiValidationWindow"]/div/div[2]/div/section/div[1]/span[2]'
+return_to_user_details_button: '//button[@class="btn btn-primary btn-lg"]'
+red_error_icon: '//span[@class="errorIcon"]'
+user_details_page_tab: '//li[@class="item1 active breadcrumb-item"][contains(text(),"User details")]'
+security_device_delivery_details_label: 'label#securityDeviceLabel'
+security_device_delivery_details_text: 'p#serviceDeviceDetails'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
